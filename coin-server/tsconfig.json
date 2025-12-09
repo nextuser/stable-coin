@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // 1. 核心语法/模块配置（移除冲突选项，保留无扩展名导入）
+    "target": "ESNext",                // 最新ES语法
+    "module": "ESNext",                // 输出ESM模块（import/export）
+    "moduleResolution": "Bundler",     // 关键：支持无扩展名导入（无需.ts）
+    "resolveJsonModule": true,         // 支持导入JSON
+    
+    // 2. 编译输出配置（到dist目录）
+    "outDir": "./dist",                // 编译产物输出到dist
+    "rootDir": "./src",                // 源码根目录（server.ts移入src）
+    "sourceMap": true,                 // 调试用sourcemap
+    "declaration": false,              // 服务端无需生成.d.ts
+    
+    // 3. 严格类型检查
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    
+    // 4. 兼容配置
+    "esModuleInterop": true,           // 兼容CJS/ESM依赖
+    "skipLibCheck": true,              // 跳过第三方库类型检查
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src"                 // 基础路径，简化导入
+  },
+  "include": ["src/**/*"],             // 只编译src下的TS文件
+  "exclude": ["node_modules", "dist"]  // 排除目录
+}
