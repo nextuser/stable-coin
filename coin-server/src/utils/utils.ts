@@ -32,7 +32,7 @@ const REQUIRED_ENV_KEYS: (keyof Config)[] = [
  * @returns 校验后的配置对象
  * @throws 进程退出（必填配置缺失时）
  */
-function getConfig(): Config {
+export function getConfig(): Config {
   // 3. 初始化配置（合理默认值 + 类型约束）
   const result: Config = {
     HELIUS_API_KEY: process.env.HELIUS_API_KEY || '',
