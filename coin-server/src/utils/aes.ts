@@ -122,7 +122,7 @@ const decryptPrivateKey = (encryptedData: string, password: string): Keypair => 
 };
 
 export function saveKeypair(keypair: Keypair, password: string) {
-  const encryptedKey = encryptPrivateKey(privateKey, password);
+  const encryptedKey = encryptPrivateKey(keypair, password);
   saveEncryptedPrivateKey(encryptedKey);
 };
 
@@ -167,5 +167,8 @@ function test_save_load(){
 }
 
 //todo 
-//test();
+if (process.env.TEST){ 
+  test();
+  test_save_load();
+}
 
