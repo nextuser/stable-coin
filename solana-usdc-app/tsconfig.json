@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react-native",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": [
+      "react-native",
+      "expo",
+      "node"
+      
+    ]
+  },
+  "include": [
+    "App.tsx",
+    "src/**/*",
+    "*.config.ts",
+    "app.json"
+  ],
+  "exclude": [
+    "node_modules",
+    ".expo",
+    "dist",
+    "**/*.js"
+  ],
+  "extends": "expo/tsconfig.base"
+}
